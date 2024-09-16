@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,4 +21,44 @@
   </div>
   <script src="app.js"></script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SendMe - Share Files</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">SendMe - Share Files and Text</h1>
+
+    <!-- File Upload Section -->
+    <div class="upload-section mb-4">
+      <input type="file" id="fileInput" class="form-control mb-2">
+      <button onclick="uploadFile()" class="btn btn-primary btn-block">Upload</button>
+    </div>
+
+    <!-- Message Section -->
+    <div class="message-section mb-4">
+      <input type="text" id="messageInput" class="form-control mb-2" placeholder="Type a message">
+      <button onclick="sendMessage()" class="btn btn-success btn-block">Send</button>
+    </div>
+
+    <!-- Display Message Section -->
+    <div id="messageDisplay" class="bg-light p-3 border rounded"></div>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="app.js"></script>
+</body>
 </html>
+
