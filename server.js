@@ -2,7 +2,34 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const app = express();
-const PORT = 3000;
+const port = process.env.PORT || 8080;
+
+console.log('PORT from environment:', process.env.PORT);
+process.stdout.write(`PORT from environment: ${process.env.PORT}\n`);
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
+
+// try {
+//   const express = require('express');
+//   const multer = require('multer');
+//   const path = require('path');
+//   const app = express();
+//   const port = process.env.PORT || 8080;
+
+//   console.log('PORT from environment:', process.env.PORT || 'NOT SET');
+//   process.stdout.write(`PORT from environment: ${process.env.PORT || 'NOT SET'}\n`);
+  
+
+//   app.listen(port, () => {
+//     console.log(`Server running on http://localhost:${port}`);
+//   });
+// } catch (error) {
+//   console.error('Error starting the server:', error);
+//   process.stdout.write(`Error starting the server: ${error}\n`);
+// }
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -34,6 +61,4 @@ app.post('/send-message', (req, res) => {
   res.send('Message received');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+
